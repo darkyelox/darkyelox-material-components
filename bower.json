@@ -1,0 +1,29 @@
+{
+  "name": "darkyelox-material-components",
+  "authors": [
+    "darkyelox <dfmv124@gmail.com>"
+  ],
+  "description": "a collection of custom polymer components",
+  "main": "demo.html",
+  "keywords": [
+    "polymer",
+    "custom",
+    "components"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.6.1",
+    "paper-material": "PolymerElements/paper-material#^1.0.6",
+    "iron-icons": "PolymerElements/iron-icons#^1.1.3",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.1",
+    "paper-button": "PolymerElements/paper-button#^1.0.13"
+  }
+}

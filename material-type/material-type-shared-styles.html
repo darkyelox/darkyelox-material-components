@@ -1,0 +1,38 @@
+<dom-module id="material-type-shared-styles">
+    <template>
+        <style>
+            :host{
+               display:block;
+               background-color: var(--paper-blue-300);
+               color:#FFFFFF;
+           }
+           
+           :host iron-icon{
+               margin-right: 10px;
+               min-width:35px;
+               min-height:35px;
+           }
+           
+           :host[type="info"]{
+               font-size:20px;
+               background-color: var(--paper-blue-300);
+           }
+           
+           :host[type="warning"], :host[type="warning"] paper-button{
+               font-size:20px;
+               background-color: var(--paper-yellow-300);
+               color: #666666;
+           }
+           
+           :host[type="error"]{
+               font-size:20px;
+               background-color: var(--paper-red-300);
+           }
+           
+           :host[type="success"]{
+               font-size:20px;
+               background-color: var(--paper-green-300);
+           }
+        </style>
+    </template>
+</dom-module>

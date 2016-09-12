@@ -1,0 +1,38 @@
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="../bower_components/paper-material/paper-material.html" />
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html" />
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html" />
+<link rel="import" href="../bower_components/paper-styles/color.html" />
+<link rel="import" href="../material-type/material-type-behavior.html" />
+<link rel="import" href="../material-type/material-type-shared-styles.html" />
+
+<dom-module id="material-message">
+    <template>
+       <style include="iron-flex iron-flex-alignment"></style>
+       <style include="material-type-shared-styles"></style>
+       <style is="custom-style">
+           
+           
+           :host paper-material{
+               padding: 5px 15px;
+               min-height:60px;
+               font-weight: bold;
+               font-family: Arial;
+           }
+           
+       </style>
+        
+        <paper-material class="horizontal center layout">
+            <iron-icon id="icon" icon="[[_applyStyle(type)]]"></iron-icon>
+            <content id="content"></content>
+        </paper-material>
+    </template>
+    <script>
+        /*global Polymer*/
+        /*global MaterialBehaviors*/
+        Polymer({
+            is: "material-message",
+            behaviors: [ MaterialBehaviors.TypeBehavior ]
+        });
+    </script>
+</dom-module>

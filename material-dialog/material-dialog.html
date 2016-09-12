@@ -1,0 +1,53 @@
+<!--
+    
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html" />
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-shared-styles.html" />
+<link rel="import" href="../material-type/material-type-behavior.html" />
+<link rel="import" href="../material-type/material-type-shared-styles.html" />
+
+<dom-module id="material-dialog">
+    <style include="paper-dialog-shared-styles"></style>
+    <style include="material-type-shared-styles"></style>
+    <style>
+        :host:not([type="warning"]) h2, :host:not([type="warning"]) p, :host:not([type="warning"])  paper-button{
+            color: white;
+            
+        }
+    </style>
+    <template>
+        <h2><iron-icon id="icon" icon="[[_applyStyle(type)]]"></iron-icon> {{title}}</h2>
+        <p><content id="content">{{content}}</content></p>
+        <div class="buttons">
+            <paper-button dialog-dismiss>{{cancel}}</paper-button>
+            <paper-button dialog-confirm>{{accept}}</paper-button>
+        </div>
+    </template>
+    <script>
+        /*global Polymer*/
+        /*global MaterialBehaviors*/
+        Polymer({
+            is: 'material-dialog', 
+            behaviors: [ MaterialBehaviors.TypeBehavior, Polymer.PaperDialogBehavior ],
+            properties:{
+                title:String,
+                content:String,
+                cancel:{
+                    type: String,
+                    value: 'Cancel'
+                },
+                accept:{
+                    type: String,
+                    value: 'Accept'
+                }
+            },
+            openWith: function(title, content){
+                this.title =  title;
+                this.content =  content;
+                this.open();
+            }
+        });
+    </script>
+</dom-module>

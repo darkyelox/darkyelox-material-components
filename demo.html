@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Test Polymer Components</title>
+
+<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+<link rel="import" href="material-message/material-message.html" />
+<link rel="import" href="material-dialog/material-dialog.html" />
+<link rel="import" href="bower_components/paper-button/paper-button.html" />
+
+<script type="text/javascript">
+    function openDialog(type){
+        console.log("hello");
+        var dialog = this.document.getElementById("test-material-dialog");
+        dialog.setAttribute('type', type);
+        dialog.openWith("test", "test content");
+    }
+</script>
+</head>
+
+<body>
+	<material-message type="info">I'm a custom info message...</material-message>
+	<material-message type="warning">I'm a custom warning message...</material-message>
+	<material-message type="error">I'm a custom error message...</material-message>
+	<material-message type="success">I'm a custom success message...</material-message>
+	<material-dialog id="test-material-dialog" modal="true" type="info"></material-dialog>
+	<paper-button onclick="openDialog('info')" class="primary" raised>Open info dialog</paper-button>
+	<paper-button onclick="openDialog('warning')" class="primary" raised>Open warning dialog</paper-button>
+	<paper-button onclick="openDialog('error')" class="primary" raised>Open error dialog</paper-button>
+	<paper-button onclick="openDialog('success')" class="primary" raised>Open success dialog</paper-button>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<script>
+    var MESSAGE_TYPES = {
+            INFO: {
+                value: 'info',
+                icon: 'info'
+            },
+            WARNING: {
+                value: 'warning',
+                icon: 'warning'
+            },
+            ERROR: {
+                value: 'error',
+                icon: 'error'
+            },
+            SUCCESS: {
+                value: 'success',
+                icon: 'thumb-up'
+            }
+        };
+
+    var MaterialBehaviors =  MaterialBehaviors || {};
+    MaterialBehaviors.TypeBehavior = {
+        properties: {
+            type: {
+                type: String,
+                value: 'info'
+            }
+        },
+        
+        _applyStyle: function(type){
+                console.log(MESSAGE_TYPES[type.toUpperCase()]);
+                return MESSAGE_TYPES[type.toUpperCase()] ? MESSAGE_TYPES[type.toUpperCase()].icon : MESSAGE_TYPES.INFO.icon;
+            }
+    }
+</script>
